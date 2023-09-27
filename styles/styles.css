@@ -1,0 +1,90 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Contenedor principal */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Logo */
+.logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Formulario de inicio de sesión */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para los recuadros de entrada de texto */
+.input-container {
+    background-color: #f7f7f7;
+    padding: 15px; /* Aumento del espaciado vertical */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Más espacio entre usuario y contraseña */
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las etiquetas de entrada de texto */
+.input-container label {
+    color: #000;
+    display: block;
+    margin-bottom: 10px; /* Aumento del espacio entre etiqueta y entrada de texto */
+    font-weight: bold;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-button {
+    background-color: #7289da;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #677bc4;
+}
+
+/* Estilos para el enlace de registro */
+.register-link {
+    color: #7289da;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #7289da;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

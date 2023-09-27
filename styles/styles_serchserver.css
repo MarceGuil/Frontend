@@ -1,0 +1,119 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 80vh; /* Ajusta la altura de las columnas principales */
+}
+
+/* Estilos para las columnas */
+.column {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    height: 100%; /* Ocupa toda la altura de la columna principal */
+}
+
+/* Estilos para la primera columna (avatar y nombre del usuario) */
+.user-column {
+    background-color: #333;
+    max-width: 200px; /* Ajusta el ancho de la primera columna */
+    justify-content: flex-end; /* Alinea el contenido en la parte inferior */
+    padding-bottom: 20px; /* Espacio en la parte inferior */
+}
+
+/* Estilos para la segunda columna (opciones de servidor) */
+.server-column {
+    background-color: #444;
+    max-width: 200px; /* Ajusta el ancho de la segunda columna */
+}
+
+.server-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.server-options li {
+    margin-bottom: 20px;
+}
+
+.server-options a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.server-options i {
+    margin-left: 10px;
+}
+
+/* Estilos para la tercera columna (mensaje) */
+.server-list-column {
+    background-color: #555;
+    text-align: center;
+    font-size: 24px; /* Tamaño de fuente más grande */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Estilos para el avatar y el nombre del usuario */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+        max-width: none; /* Elimina el máximo ancho para las columnas */
+    }
+}
+
+
+
+
+
+
