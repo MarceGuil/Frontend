@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="../styles/styles_signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-container">
+            <!-- Logo -->
+            <img src="discordia.logo.png" alt="Logo de la aplicación" class="logo">
+            
+            <!-- Formulario de registro detallado -->
+            <form action="/registro" method="POST" class="signup-form">
+                <fieldset>
+                    <legend>Crear una cuenta</legend>
+                    <div class="input-container">
+                        <label for="nombreUsuario">Nombre de Usuario:</label>
+                        <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <div class="date-inputs">
+                            <input type="number" id="dia" name="dia" min="1" max="31" placeholder="Día" required>
+                            <input type="number" id="mes" name="mes" min="1" max="12" placeholder="Mes" required>
+                            <input type="number" id="anio" name="anio" min="1900" max="2099" placeholder="Año" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
