@@ -17,7 +17,7 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    height: 80vh; /* Ajusta la altura de las columnas principales */
+    height: 80vh; 
 }
 
 /* Estilos para las columnas */
@@ -29,28 +29,36 @@ body {
     align-items: center;
     text-align: center;
     color: #fff;
-    height: 100%; /* Ocupa toda la altura de la columna principal */
+    height: 100%; 
 }
 
 /* Estilos para la primera columna (avatar y nombre del usuario) */
 .user-column {
     background-color: #333;
-    max-width: 200px; /* Ajusta el ancho de la primera columna */
-    justify-content: flex-end; /* Alinea el contenido en la parte inferior */
-    padding-bottom: 20px; /* Espacio en la parte inferior */
+    max-width: 200px; 
+    justify-content: flex-end; 
+    padding-bottom: 20px; 
 }
+
+/* Estilos para el texto "Servidores a los que te has unido" */
+.user-column h2 {
+    font-size: 16px; 
+}
+
 
 /* Estilos para la segunda columna (opciones de servidor) */
 .server-column {
     background-color: #444;
-    max-width: 200px; /* Ajusta el ancho de la segunda columna */
+    max-width: 200px; 
+    font-size: 24px; 
+    line-height: 1.5;
 }
 
 .server-options {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: left;
 }
 
 .server-options li {
@@ -74,7 +82,7 @@ body {
 .server-list-column {
     background-color: #555;
     text-align: center;
-    font-size: 24px; /* Tamaño de fuente más grande */
+    font-size: 24px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,11 +116,9 @@ body {
     }
     .column {
         width: 100%;
-        max-width: none; /* Elimina el máximo ancho para las columnas */
+        max-width: none; 
     }
 }
-
-
 
 
 
