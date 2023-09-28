@@ -36,8 +36,15 @@ body {
 .user-column {
     background-color: #333;
     max-width: 200px; 
-    justify-content: flex-end; 
+    justify-content: flex-start; 
     padding-bottom: 20px; 
+}
+/* Estilo para el nombre del usuario */
+#username {
+    font-size: 24px; 
+    color: #007bff; 
+    font-weight: bold; 
+    margin: 0; 
 }
 
 /* Estilos para el texto "Servidores a los que te has unido" */
@@ -45,10 +52,74 @@ body {
     font-size: 16px; 
 }
 
+/* Estilo de la ventana emergente */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    max-width: 600px; 
+    text-align: left; 
+    z-index: 1000; 
+}
 
-/* Estilos para la segunda columna (opciones de servidor) */
+/* Estilo para el avatar del usuario */
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+/* Estilo para las letras centradas y alineadas */
+.popup p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+/* Estilo para el botón "Editar" */
+.edit-button {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #0056b3; 
+}
+
+/* Estilos adicionales */
+/* Estilo para los botones de "Cambiar Contraseña" y "Cambiar Avatar" */
+#change-password-button,
+#change-avatar-button {
+    background-color: #ccc; 
+    color: #333; 
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Alineación de los botones de "Editar" a la derecha */
+.popup .edit-button {
+    float: right;
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+/* Estilo para la segunda columna (opciones de servidor) */
 .server-column {
-    background-color: #444;
+    background-color: #555; /* Cambio de color */
     max-width: 200px; 
     font-size: 24px; 
     line-height: 1.5;
@@ -62,7 +133,7 @@ body {
 }
 
 .server-options li {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Mayor espacio entre las opciones */
 }
 
 .server-options a {
@@ -78,35 +149,16 @@ body {
     margin-left: 10px;
 }
 
-/* Estilos para la tercera columna (mensaje) */
+/* Estilo para la tercera columna (mensaje) */
 .server-list-column {
-    background-color: #555;
+    background-color: #333; 
     text-align: center;
-    font-size: 24px; 
+    font-size: 32px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
-}
-
-/* Estilos para el avatar y el nombre del usuario */
-.user-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.username {
-    font-weight: bold;
 }
 
 /* Estilos para dispositivos móviles */
@@ -120,6 +172,61 @@ body {
     }
 }
 
+/* Estilo de la ventana emergente de cambio de contraseña */
+#change-password-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 30px; 
+    max-width: 600px;
+    text-align: left;
+    z-index: 1000;
+}
 
+/* Estilo para el título "Cambiar Contraseña" */
+#change-password-popup h2 {
+    margin-bottom: 20px; 
+}
 
+/* Estilo para el formulario de cambio de contraseña */
+#change-password-form {
+    margin-bottom: 20px; 
+}
 
+/* Estilo para los campos de contraseña */
+#current-password,
+#new-password,
+#confirm-new-password {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Estilo para el botón "Guardar" en el formulario */
+#change-password-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#change-password-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de cierre */
+#close-change-password-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
