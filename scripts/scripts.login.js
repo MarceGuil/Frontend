@@ -15,23 +15,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// Abrir ventana emergente al hacer clic en el avatar o nombre del usuario
-const avatar = document.getElementById('avatar');
-const username = document.getElementById('username');
-const userPopup = document.getElementById('userPopup');
-
-avatar.addEventListener('click', () => {
-    userPopup.style.display = 'block';
-});
-
-username.addEventListener('click', () => {
-    userPopup.style.display = 'block';
-});
-
-// Cerrar ventana emergente al hacer clic en Cerrar Sesión
-const logoutButton = document.getElementById('logoutButton');
-
-logoutButton.addEventListener('click', () => {
-    userPopup.style.display = 'none';
-});
