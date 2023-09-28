@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;  
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     text-align: center;
-    margin: 0 auto; /* Centra horizontalmente */
+    margin: 0 auto; 
 }
 
 /* Logo */
@@ -42,9 +42,9 @@ body {
 /* Estilos para los recuadros de entrada de texto */
 .input-container {
     background-color: #f7f7f7;
-    padding: 15px; /* Aumento del espaciado vertical */
+    padding: 15px; 
     border-radius: 8px;
-    margin-bottom: 20px; /* Más espacio entre usuario y contraseña */
+    margin-bottom: 20px; 
     text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -53,7 +53,7 @@ body {
 .input-container label {
     color: #000;
     display: block;
-    margin-bottom: 10px; /* Aumento del espacio entre etiqueta y entrada de texto */
+    margin-bottom: 10px; 
     font-weight: bold;
 }
 
@@ -67,6 +67,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.2s;
+    margin-top: 30px;
 }
 
 .login-button:hover {
@@ -88,3 +89,15 @@ body {
 .register-link a:hover {
     text-decoration: underline;
 }
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .login-container {
+        max-width: 90%; 
+    }
+
+    .logo {
+        width: 150px; 
+    }
+}
+
