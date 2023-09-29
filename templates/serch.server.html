@@ -14,7 +14,7 @@
             <!-- Avatar y nombre del usuario -->
             <div class="user-details">
                 <a href="#" onclick="showProfilePopup()">
-                    <img src="Avatar.1.png" alt="Avatar de usuario" id="avatar" class="avatar">
+                    <img src="../templates/avatars/Avatar.1.png" alt="Avatar de usuario" id="avatar" class="avatar">
                     <span id="username" class="username">Lucía</span>
                 </a>
             </div>
@@ -38,7 +38,7 @@
     <div class="popup" id="profile-popup">
         <!-- Contenido de la ventana emergente -->
         <h2>Mi Perfil</h2>
-        <img src="Avatar.1.png" alt="Avatar de usuario" class="avatar">
+        <img src="../templates/avatars/Avatar.1.png" alt="Avatar de usuario" class="avatar">
         <p><strong>Lucía Galán</strong></p>
         <p><strong>Nombre de usuario:</strong> luchi <button class="edit-button">Editar</button></p>
         <p><strong>Nombre:</strong> Lucía <button class="edit-button">Editar</button></p>
@@ -47,7 +47,10 @@
         <!-- Agrega un botón para cambiar la contraseña -->
         <button id="change-password-button" class="edit-button">Cambiar contraseña</button>
         <!-- Agrega un botón para cambiar el avatar -->
-        <button id="change-avatar-button" class="edit-button">Cambiar avatar</button>
+        <button id="change-avatar-button">Cambiar avatar</button>
+        <br>
+        <input type="file" id="avatar-input" style="display: none;">
+        <br>
         <a href="#" id="close-profile-popup">Cerrar</a> <!-- Enlace para cerrar la ventana emergente -->
     </div>
     <!-- Ventana emergente del cambio de contraseña (inicialmente oculta) -->
@@ -73,5 +76,3 @@
     <script src="../scripts/scripts.serchserver.js"></script>
 </body>
 </html>
-
-
