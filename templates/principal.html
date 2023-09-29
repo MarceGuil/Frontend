@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas de Servidores</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="list_servidores">
+            <h2 class="list-title">SERVIDORES</h2>
+            <ul id="server-list">
+                <!-- Los elementos <li> se agregarán dinámicamente aquí -->
+            </ul>
+            <button id="btn-abrir-popup" class="btn-abrir-popup">Crear servidor</button>
+            <div class="user-details">
+                <a href="#" onclick="showProfilePopup()">
+                    <img src="Avatar.1.png" alt="Avatar de usuario" id="avatar" class="avatar">
+                    <span id="username" class="username">Lucía</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../assets/cancelar.png" alt="salir"></a>
+				<h3>Nuevo servidor</h3>
+				<form action="" id="form_crear_server">
+					<div class="contenedor-inputs">
+						<input type="text" placeholder="Nombre" id="nombre_servidor">
+					</div>
+					<input type="submit" class="btn-submit" value="Crear servidor">
+				</form>
+			</div>
+		</div>
+
+
+
+        <div class="list_canales">
+            <h2 class="list-title">CANALES</h2>
+            <ul id="channels-list">
+                <!-- Los elementos <li> de datos adicionales se agregarán aquí -->
+            </ul>
+            <button id="btn-abrir-popup_canal" class="btn-abrir-popupA">Crear canal</button>
+        </div>
+
+        <div class="overlayY" id="overlayY">
+			<div class="popupC" id="popupC">
+				<a href="#" id="btn-cerrar-popupA" class="btn-cerrar-popupA"><img src="../assets/cancelar.png" alt="salir"></a>
+				<h3>Nuevo canal</h3>
+				<form action="" id="form_crear_canal">
+                    <div class="contenedor-inputs">
+                        <input type="text" placeholder="Nombre" id="nombre_canal">
+                    </div>
+                    <input type="submit" class="btn-submit" value="Crear Canal">
+                </form>
+			</div>
+		</div>
+
+
+
+
+        <div class="list_mensajes">
+            <h2 class="list-title">MENSAJES</h2>
+            <ul id="message-list">
+                <!-- Los mensajes se agregarán dinámicamente aquí -->
+            </ul>
+            <div class="inferior">
+                <form action="" id="enviar_mensaje">
+                    <input type="text" id="message" name="message" placeholder="Escribe tu mensaje..." required>
+                   <button type="submit" class="enviar">Enviar
+                   </button>
+                </form>
+             </div>
+        </div>
+    </div>
+    <div class="popup" id="profile-popup">
+        <!-- Contenido de la ventana emergente -->
+        <h2>Mi Perfil</h2>
+        <img src="Avatar.1.png" alt="Avatar de usuario" class="avatar">
+        <p><strong>Lucía Galán</strong></p>
+        <p><strong>Nombre de usuario:</strong> luchi <button class="edit-button">Editar</button></p>
+        <p><strong>Nombre:</strong> Lucía <button class="edit-button">Editar</button></p>
+        <p><strong>Apellido:</strong> Galán <button class="edit-button">Editar</button></p>
+        <p><strong>Correo electrónico:</strong> luchi_galan@gmail.com <button class="edit-button">Editar</button></p>
+        <!-- Agrega un botón para cambiar la contraseña -->
+        <button id="change-password-button" class="edit-button">Cambiar contraseña</button>
+        <!-- Agrega un botón para cambiar el avatar -->
+        <button id="change-avatar-button" class="edit-button">Cambiar avatar</button>
+        <a href="#" id="close-profile-popup">Cerrar</a> <!-- Enlace para cerrar la ventana emergente -->
+    </div>
+
+    <div id="servidores">
+        <ul class="lista_servidores"></ul>
+    </div>
+
+    <!-- <script src="../scripts/scripts.js"></script>  -->
+
+    <!-- <script></script> -->
+
+    <script src="../scripts/popup_crear_server.js"></script>
+
+    <script src="../scripts/popup_crear_canal.js"></script>
+
+    <script src="../scripts/servers.js"></script>
+    <script src="../scripts/channels.js"></script>
+    <script src="../scripts/messages.js"></script> 
+    <script>
+        obtenerServidores();
+        document.getElementById("form_crear_server").addEventListener("submit", function (event) {
+            event.preventDefault();
+            obtenerContenidoNombre();
+        });
+
+        document.getElementById("form_crear_canal").addEventListener("submit", function (event) {
+            event.preventDefault();
+            crearCanal();
+        });
+
+    </script>
+</body>
+</html>

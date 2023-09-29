@@ -19,19 +19,19 @@ function login() {
             return response.json().then(data => {
                 console.log(data);
                 localStorage.setItem("user", JSON.stringify(data));
-                window.location.href = "search_server.html";
+                window.location.href = "principal.html";
 
                 emailInput.value = "";
                 passwordInput.value = "";
             });
         } else {
             return response.json().then(data => {
-                document.getElementById("message").innerHTML = data.message;
+                console.log(data);
             });
         }
     })
     .catch((error) => {
-        document.getElementById("message").innerHTML = "Ocurrio un error";
+        console.log(error);
     });
 }
 

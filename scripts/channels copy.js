@@ -3,19 +3,14 @@
 //         channelsList.removeChild(channelsList.firstChild);
 //     }
 // }
-const createChannelButton = document.getElementById('form_crear_canal');
-
-createChannelButton.addEventListener('submit', function(event) {
+const createChannelButton = document.getElementById('form_crear_canal').addEventListener('submit', function(event) {
     event.preventDefault();
-    crearCanal();
-});
+    crearCanal});
 
 
 function obtenerCanales(nombreServidor) {
     const channelsList = document.getElementById('channels-list');
     const messageList = document.getElementById('message-list');
-
-    localStorage.setItem("name_server", JSON.stringify(nombreServidor));
     
     // Construir la URL para obtener los canales del servidor específico
     const url = `http://127.0.0.1:5000/channels/${nombreServidor}`;
@@ -55,16 +50,14 @@ function obtenerCanales(nombreServidor) {
                 listItem.addEventListener('click', function() {
                     const channelName = channelItem[0];
                     console.log(channelName);
-                    
 
                     createChannelButton.addEventListener('click', function() {
                         //     // Llamar a una función para crear un canal en el servidor seleccionado
-                            crearCanal(serverName);
+                            crearCanal(nombreServidor);
                     });
 
                     // Llamar a la función para obtener los mensajes del canal seleccionado
                     obtenerMensajes(channelName);
-                    localStorage.setItem("channel", JSON.stringify(channelName));
                 });
             });
         })

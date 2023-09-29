@@ -1,0 +1,569 @@
+* {
+	padding: 0rem;
+	margin: 0;
+	box-sizing:border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilo para el contenedor de las listas */
+.container {
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-gap: 20px; Espacio entre las listas */
+    /* justify-content: space-between; Alinea las listas al comienzo y al final del contenedor */
+}
+
+/* Estilo para las listas de servidores, datos adicionales y mensajes */
+/* .list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+} */
+
+h2 {
+	color: #FFFFFF;
+	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+button {
+	background-color: #5865F2;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+	/* width: 6rem;*/
+	height: 2.5rem; 
+	font-size: 1rem;
+	margin-left: 22%;
+}
+
+.list_servidores {
+	width: 15%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #1E1F22;
+}
+
+
+
+.inferior {
+	width: 70%;
+	padding: .74rem .7rem;
+	background-color: #323338;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+  
+.inferior form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+  
+.inferior form input {
+	flex: 1;
+	/* width: 90%; */
+	height: 3rem;
+	border-radius: 1rem;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	font-size: 1.2rem;
+	background-color: #383A40;
+	color: #FFFFFF;
+}
+
+.list_canales {
+	width: 15%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #2B2D31;
+}
+
+.list_mensajes {
+	width: 70%;
+	height: 88.9vh;
+	margin: 0;
+	padding: 0;
+	background-color: #1E1F22;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Estilo para los elementos de lista */
+li {
+    padding: 5px;
+    /* border-bottom: 1px solid #ccc; */
+	list-style-type: none;
+	color: #fff;
+	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+/* Estilo para los títulos de las listas */
+.list-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* POPUP PARA INGRESO SERVIDOR */
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 400px;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+img {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+
+/* ANIMACIONES POPUP */
+
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* CREAR CANAL */
+
+.overlayY {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlayY.active {
+	visibility: visible;
+}
+
+
+.popupC {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 400px;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popupC .btn-cerrar-popupA {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popupC .btn-cerrar-popupA:hover {
+	color: #000;
+}
+
+img {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.popupC h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popupC h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popupC form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popupC form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.popupC form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popupC form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+
+/* ANIMACIONES POPUP */
+
+.popupC.active {	transform: scale(1); opacity: 1; }
+.popupC.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popupC.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popupC.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* POP-UP USUARIO */
+
+/* Estilo de la ventana emergente */
+.popupF {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; 
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
+    padding: 20px;
+    max-width: 600px; 
+    text-align: left; 
+    z-index: 1000; 
+}
+
+/* Estilo para el avatar del usuario */
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* margin: 0 auto 10px; */
+    display: block;
+	margin: 0 30px;
+}
+
+/* Estilo para las letras centradas y alineadas */
+.popupF p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+/* Estilo para el botón "Editar" */
+.edit-button {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #0056b3; 
+}
+
+/* Estilos adicionales */
+/* Estilo para los botones de "Cambiar Contraseña" y "Cambiar Avatar" */
+#change-password-button,
+#change-avatar-button {
+    background-color: #ccc; 
+    color: #333; 
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Alineación de los botones de "Editar" a la derecha */
+.popupF .edit-button {
+    float: right;
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+/* Estilo para la segunda columna (opciones de servidor) */
+.server-column {
+    background-color: #555; /* Cambio de color */
+    max-width: 200px; 
+    font-size: 24px; 
+    line-height: 1.5;
+}
+
+.server-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.server-options li {
+    margin-bottom: 30px; /* Mayor espacio entre las opciones */
+}
+
+.server-options a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.server-options i {
+    margin-left: 10px;
+}
+
+/* Estilo para la tercera columna (mensaje) */
+.server-list-column {
+    background-color: #333; 
+    text-align: center;
+    font-size: 32px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+        max-width: none; 
+    }
+}
+
+/* Estilo de la ventana emergente de cambio de contraseña */
+#change-password-popupF {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 30px; 
+    max-width: 600px;
+    text-align: left;
+    z-index: 1000;
+}
+
+/* Estilo para el título "Cambiar Contraseña" */
+#change-password-popupF h2 {
+    margin-bottom: 20px; 
+}
+
+/* Estilo para el formulario de cambio de contraseña */
+#change-password-form {
+    margin-bottom: 20px; 
+}
+
+/* Estilo para los campos de contraseña */
+#current-password,
+#new-password,
+#confirm-new-password {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Estilo para el botón "Guardar" en el formulario */
+#change-password-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#change-password-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de cierre */
+#close-change-password-popupF {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}

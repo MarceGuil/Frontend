@@ -35,7 +35,7 @@ function signup() {
                 console.log(data);
                 localStorage.setItem("user-sign", JSON.stringify(data));
                 // Limpiar los campos después del registro
-                window.location.href = "search_server.html";
+                window.location.href = "login.html";
                 
                 nombreUsuarioInput.value = "";
                 nombreInput.value = "";
