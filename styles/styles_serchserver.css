@@ -47,10 +47,6 @@ body {
     margin: 0; 
 }
 
-/* Estilos para el texto "Servidores a los que te has unido" */
-.user-column h2 {
-    font-size: 16px; 
-}
 
 /* Estilo de la ventana emergente */
 .popup {
