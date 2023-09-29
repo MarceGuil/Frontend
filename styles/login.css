@@ -1,0 +1,121 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);  
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Contenedor principal */
+.login-container {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    /* min-width: 60vw; */
+    max-width: 350px; 
+    /* text-align: center; */
+    /* margin: 5rem auto;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    width: 80%;
+    /* display: block; */
+    margin-bottom: 1.5rem;
+}
+
+/* Formulario de inicio de sesión */
+.login-form {
+    width: 80%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    /* gap: 1rem; */
+}
+.login-form fieldset{
+    width: 100%;
+    text-align: center;
+    /* padding: 1rem; */
+    border: none;
+}
+
+.login-form fieldset legend{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+/* Estilos para los recuadros de entrada de texto */
+.input-container {
+    width: 100%;
+    /* background-color: #f7f7f7; */
+    /* padding: 15px; Aumento del espaciado vertical */
+    /* border-radius: 8px; */
+    /* margin: auto; */
+    /* margin-bottom: 1.5rem; Más espacio entre usuario y contraseña */
+    text-align: left;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.user{
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para las etiquetas de entrada de texto */
+.input-container label {
+    /* color: #000; */
+    /* display: block; */
+    /* padding-bottom: .5rem;  */
+    font-weight: bold;
+}
+
+.input-container input{
+    width: 100%;
+    padding: .5rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border-radius: .5rem;
+    border: 1px solid var(--bg-color);
+}
+
+/* Estilos para el botón de inicio de sesión */
+button {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--btn-color);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #025e7f;
+}
+
+/* Estilos para el enlace de registro */
+.register-link {
+    /* color: #7289da; */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: var(--btn-color);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

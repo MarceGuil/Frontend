@@ -1,0 +1,99 @@
+/* Estilos para el formulario de registro */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    max-width: 350px; /* Ancho máximo del formulario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 80%;
+    /* display: block; */
+    margin-bottom: 1.5rem;
+}
+
+.signup-form {
+    width: 80%;
+}
+
+.signup-form fieldset {
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+.signup-form fieldset legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para los recuadros de entrada de texto */
+.input-container {
+    width: 100%;
+    text-align: left;
+}
+
+.input-container label {
+    font-weight: bold;
+}
+
+.input-container input {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border-radius: .5rem;
+    border: 1px solid var(--bg-color);
+}
+
+
+
+/* Estilos para el botón de registro */
+.signup-form button {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--btn-color);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.signup-form button:hover {
+    background-color: #025e7f;
+}
+
+/* Estilos para el enlace de inicio de sesión */
+.register-link {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: var(--btn-color);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

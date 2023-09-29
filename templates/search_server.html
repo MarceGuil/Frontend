@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Servidores</title>
+    <link rel="stylesheet" href="../styles/styles_serchserver.css">
+    <!-- Agrega Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column user-column">
+            <!-- Avatar y nombre del usuario -->
+            <div class="user-details">
+                <a href="#" onclick="showProfilePopup()">
+                    <img src="Avatar.1.png" alt="Avatar de usuario" id="avatar" class="avatar">
+                    <span id="username" class="username">Lucía</span>
+                </a>
+            </div>
+        <!-- Lista de servidores a los que se ha unido -->
+        <div class="joined-servers">
+        </div>
+    </div> 
+    <div class="column server-column">
+        <!-- Opciones de navegación para servidores -->
+        <ul class="server-options">
+            <li><a href="#">Explorar Servidores <i class="fas fa-search"></i></a></li>
+            <li><a href="#">Añadir un Servidor <i class="fas fa-plus-circle"></i></a></li>
+        </ul>
+    </div>
+    <div class="column server-list-column">
+        <div class="server-list">
+            <p>Aún no te has unido a un servidor. Intenta buscar uno o crea uno propio.</p>
+        </div>
+    </div>
+</div>
+    <div class="popup" id="profile-popup">
+        <!-- Contenido de la ventana emergente -->
+        <h2>Mi Perfil</h2>
+        <img src="Avatar.1.png" alt="Avatar de usuario" class="avatar">
+        <p><strong>Lucía Galán</strong></p>
+        <p><strong>Nombre de usuario:</strong> luchi <button class="edit-button">Editar</button></p>
+        <p><strong>Nombre:</strong> Lucía <button class="edit-button">Editar</button></p>
+        <p><strong>Apellido:</strong> Galán <button class="edit-button">Editar</button></p>
+        <p><strong>Correo electrónico:</strong> luchi_galan@gmail.com <button class="edit-button">Editar</button></p>
+        <!-- Agrega un botón para cambiar la contraseña -->
+        <button id="change-password-button" class="edit-button">Cambiar contraseña</button>
+        <!-- Agrega un botón para cambiar el avatar -->
+        <button id="change-avatar-button" class="edit-button">Cambiar avatar</button>
+        <a href="#" id="close-profile-popup">Cerrar</a> <!-- Enlace para cerrar la ventana emergente -->
+    </div>
+    <!-- Ventana emergente del cambio de contraseña (inicialmente oculta) -->
+    <div class="popup" id="change-password-popup" style="display: none;">
+        <!-- Contenido de la ventana emergente de cambio de contraseña -->
+        <h2>Cambiar Contraseña</h2>
+        <!-- Agrega un formulario para cambiar la contraseña -->
+        <form id="change-password-form">
+            <label for="current-password">Contraseña actual:</label>
+            <input type="password" id="current-password" name="current-password" required><br>
+
+            <label for="new-password">Nueva contraseña:</label>
+            <input type="password" id="new-password" name="new-password" required><br>
+
+            <label for="confirm-new-password">Confirmar nueva contraseña:</label>
+            <input type="password" id="confirm-new-password" name="confirm-new-password" required><br>
+
+            <button type="submit">Guardar</button>
+        </form>
+        <a href="#" id="close-change-password-popup">Cerrar</a> <!-- Enlace para cerrar la ventana emergente de cambio de contraseña -->
+    </div>
+    <!-- Enlaza el archivo JavaScript -->
+    <script src="../scripts/scripts.serchserver.js"></script>
+</body>
+</html>
+
+
